@@ -80,11 +80,12 @@ body{
 
 }
 
-.card-text p {
- font-weight: 400 !important;
+.card-text b{
+font-weight: 700;
 }
 .listing-link{
     text-decoration: none;
+    color: black;
 }
 
 .card-img-overlay{
@@ -114,4 +115,14 @@ object-fit: cover;
 .show-card{
     padding-left:0;
     padding-right:0;
+}
+.review-card{
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review-card:hover{
+  transform: scale(1.02);
+  transition: 0.2s;
 }
