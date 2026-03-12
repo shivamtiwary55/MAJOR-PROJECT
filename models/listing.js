@@ -20,7 +20,6 @@ const listingSchema = new Schema({
   ]
 });
 
-
 // CASCADE DELETE MIDDLEWARE
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {

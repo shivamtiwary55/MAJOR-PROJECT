@@ -22,6 +22,7 @@ const validateReview = (req,res,next)=>{
 
 
 
+
 // CREATE REVIEW
 router.post("/",
   validateReview,
@@ -35,6 +36,7 @@ router.post("/",
 
     await newReview.save();
     await listing.save();
+    req.flash("success","New Review Created!");
 
     res.redirect(`/listings/${listing._id}`);
 
@@ -53,6 +55,7 @@ router.delete("/:reviewId",
     });
 
     await Review.findByIdAndDelete(reviewId);
+    req.flash("success","Review deleted");
 
     res.redirect(`/listings/${id}`);
 

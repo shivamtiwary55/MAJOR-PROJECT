@@ -10,18 +10,20 @@
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
+          id="title"
           name="listing[title]"
           type="text"
           placeholder="Title"
           class="form-control"
           required
         />
-        <div class="valid -feedback">Title looks good!</div>
+        <div class="valid-feedback"></div>
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea
+          id="description"
           name="listing[description]"
           class="form-control"
           required
@@ -29,28 +31,29 @@
       </div>
 
       <div class="mb-3">
-        <label for="image" class="form-label">Image Link</label>
+        <label for="image" class="form-label">Image URL</label>
         <input
-          name="listing[image]"
+          id="image"
           type="text"
-          placeholder="Enter URL/LINK"
+          name="listing[image]"
+          value=""
+          placeholder="Enter image URL"
           class="form-control"
           required
-        />
+        >
       </div>
 
       <div class="row">
-
         <div class="mb-3 col-md-4">
           <label for="price" class="form-label">Price</label>
           <input
             id="price"
             name="listing[price]"
+            type="number"
             placeholder="Enter Price"
             class="form-control"
             required
           />
-          <div class="invalid -feedback">Please enter valid price</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -63,9 +66,7 @@
             class="form-control"
             required
           />
-          <div class="invalid -feedback">Enter correct country</div>
         </div>
-
       </div>
 
       <div class="mb-3">
@@ -78,11 +79,9 @@
           class="form-control"
           required
         />
-        <div class="invalid -feedback">Enter correct location</div>
       </div>
 
-      <button class="btn btn-dark add-btn mt-3">Add</button>
-
+      <button class="btn btn-dark add-btn mt-3">Add Listing</button>
     </form>
 
   </div>
