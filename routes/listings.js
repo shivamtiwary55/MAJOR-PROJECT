@@ -24,6 +24,10 @@ router.get("/",wrapAsync(async(req,res)=>{
 
 // NEW ROUTE
 router.get("/new",(req,res)=>{
+  if(!req.isAuthenticated()){
+    req.flash("error","You must be looged in to create listing ");
+    return res.redirect("/listings")
+  }
   res.render("listings/new.ejs");
 });
 

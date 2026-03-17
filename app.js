@@ -79,13 +79,14 @@ app.get("/",(req,res)=>{
 });
 
 // INVALID ROUTE
-app.all("*",(req,res,next)=>{
+app.use((req,res,next)=>{
   next(new ExpressError(404,"Page Not Found"));
 });
 
 // ERROR HANDLER
 app.use((err,req,res,next)=>{
   let {statusCode=500,message="Something went wrong"} = err;
+  console.log(err.stack);
   res.status(statusCode).render("error.ejs",{err});
 });
 
